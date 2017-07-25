@@ -1,16 +1,10 @@
-class Seed
+Post.destroy_all
+Comment.destroy_all
 
+50.times do |i|
+    post = Post.create!(name: Faker::TwinPeaks.character, title: Faker::TwinPeaks.quote, content: Faker::Seinfeld.quote)
 
-  def self.begin
-    seed = Seed.new
-    seed.generate_posts
-  end
-
-  def generate_posts
-    50.times do |i|
-        post = Post.create!(name: Faker::TwinPeaks.character, title: Faker::TwinPeaks.quote, content: Faker::Lorem.paragraph(3))
-    end
+  3.times do |i|
+    post.comments.create!(name: Faker::Seinfeld.character, content: Faker::Seinfeld.quote)
   end
 end
-
-Seed.begin

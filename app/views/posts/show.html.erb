@@ -1,13 +1,23 @@
 
 <div class="container">
   <h2><%= @post.name %></h2>
-  <h3>$<%= @post.title %></h3>
+  <h3><%= @post.title %></h3>
 
    <br>
-  <h3>: <%= @post.content %></h3>
+  <h3><%= @post.content %></h3>
   <br>
   <% if current_user.try(:admin?) %>
   <p><%= link_to "Edit Post", edit_post_path(@post) %></p>
   <p><%= link_to "Delete Post", post_path(@post), :data => {:confirm => "You sure?", :method => "delete"} %></p>
   <% end %>
+
+  <h3>Comments:</h3>
+  <% @post.comments.each do |comment| %>
+        <li><h4> "<%= comment.content %>" </h4></li>
+
+      <% if current_user.try(:admin?) %>
+      <p><%= link_to "Delete Comment", post_comment_path(@post, comment), :data => {:confirm => "You sure?", :method => "delete"} %></p>
+      <% end %>
+      <br>
+<% end %>
 </div>

@@ -1,4 +1,4 @@
-class CommentsController < ApplicationRecord
+class CommentsController < ApplicationController
 
   def new
     @post = Post.find(params[:post_id])
@@ -16,8 +16,8 @@ class CommentsController < ApplicationRecord
   end
 
   def destroy
-    @post = Post.find(parms[:post_id])
-    @comment = Comment.find(:id)
+    @post = Post.find(params[:post_id])
+    @comment = Comment.find(params[:id])
     @comment.destroy
     redirect_to_post_path(@comment.post)
   end
@@ -25,3 +25,5 @@ class CommentsController < ApplicationRecord
   private
   def post_params
     params.require(:comment).permit(:name, :content)
+  end
+end

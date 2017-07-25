@@ -10,20 +10,14 @@
 
   <body>
     <div class="my-nav">
-      <h1><%= link_to "Ordinary Wonder Photos",  home_index_path %></h1>
       <ul>
-        <li><%= link_to "Photos",  photos_path %></li>
+        <li><%= link_to "Home",  posts_path %></li>
         <% if current_user %>
           <li> <%= link_to "Sign out", destroy_user_session_path, method: 'delete' %></li>
-          <% if current_user.try(:admin?) %>
-            <li> <%= link_to "Add Photo",  new_photo_path %></li>
-          <% end %>
+            <li> <%= link_to "Add Post",  new_post_path %></li>
         <% else %>
         <li><%= link_to 'Sign In', new_user_session_path %></li>
         <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <% if current_user.try(:admin?) %>
-          <li> <%= link_to "Add Photo",  new_photo_path %></li>
-          <% end %>
           <% end %>
         </ul>
       </div>

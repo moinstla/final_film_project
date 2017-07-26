@@ -476,7 +476,7 @@ nav {
   height: 100vh;
   padding: 60px;
   max-width: 400px;
-  width: 40%; }
+  width: 20%; }
   @media screen and (max-width: 760px) {
     .side-bar {
       display: none; } }

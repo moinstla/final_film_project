@@ -7,8 +7,8 @@
   // right: 0;    //Uncomment for RIGHT POSITIONED SIDEBAR
   height: 100vh; //keeps sidebar height fixed to height of viewport
   padding: 60px;
-  max-width: 400px; //maximum width sidebar is allowed to expand
-  width: 40%;
+  max-width: 200px; //maximum width sidebar is allowed to expand
+  width: 30%;
   @media screen and #{$tablet} { //sidebar is no longer visible at tablet screen size
     display: none;
   }

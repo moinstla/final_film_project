@@ -30,6 +30,7 @@ gem 'faker'
 gem 'maktoub'
 gem 'jquery-rails'
 gem 'tuxedo-css-rails'
+gem "simple_calendar", "~> 2.0"
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

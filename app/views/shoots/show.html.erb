@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @shoot.name %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @shoot.start_time %>
+</p>
+
+<%= link_to 'Edit', edit_shoot_path(@shoot) %> |
+<%= link_to 'Back', shoots_path %>

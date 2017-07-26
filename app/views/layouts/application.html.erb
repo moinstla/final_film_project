@@ -13,38 +13,29 @@
   </head>
 
   <body>
-    <div class="my-nav">
 
-<div class="side-bar bg-pop">
+<div class="side-bar bg-dark-grey">
   <head>
-    <!--put in your own logo here-->
     <img src="img/logo-thick-light.svg" alt="tuxedo logo">
   </head>
   <ul class="underline-light">
-    <li class="active"><a>Menu Item 1</a></li>
-    <li><a>Menu Item 2</a></li>
+    <li class="active"><%= link_to "Home",  posts_path %></li>
+    <% if current_user %>
+      <li> <%= link_to "Sign out", destroy_user_session_path, method: 'delete' %></li>
+    <li> <%= link_to "Add Post",  new_post_path %></li>
   </ul>
-  <ul>
-    <li><a>Menu Item 3</a></li> 
-  </ul>
-</div>
-<div class="side-bar-content">
-  <h4>Sidebar content</h4>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-</div>
-      <ul>
-        <li><%= link_to "Home",  posts_path %></li>
-        <% if current_user %>
-          <li> <%= link_to "Sign out", destroy_user_session_path, method: 'delete' %></li>
-            <li> <%= link_to "Add Post",  new_post_path %></li>
+
+
+
         <% else %>
         <li><%= link_to 'Sign In', new_user_session_path %></li>
         <li><%= link_to 'Sign Up', new_user_registration_path %></li>
           <% end %>
         </ul>
       </div>
-      <div class="container">
+      <div class="side-bar-content">
       <%= yield %>
+      </div>
     </body>
   </div>
 </html>

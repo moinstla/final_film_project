@@ -2,6 +2,10 @@
 <html>
   <head>
     <title>FilmProject</title>
+    <link rel="stylesheet" href="css/styles.css">
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="js/tuxedo.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,6 +14,24 @@
 
   <body>
     <div class="my-nav">
+
+<div class="side-bar bg-pop">
+  <head>
+    <!--put in your own logo here-->
+    <img src="img/logo-thick-light.svg" alt="tuxedo logo">
+  </head>
+  <ul class="underline-light">
+    <li class="active"><a>Menu Item 1</a></li>
+    <li><a>Menu Item 2</a></li>
+  </ul>
+  <ul>
+    <li><a>Menu Item 3</a></li> 
+  </ul>
+</div>
+<div class="side-bar-content">
+  <h4>Sidebar content</h4>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</div>
       <ul>
         <li><%= link_to "Home",  posts_path %></li>
         <% if current_user %>

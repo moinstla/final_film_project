@@ -9,7 +9,10 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
 //= require rails-ujs
+//= require jquery
+//= require tuxedo-css
+//= require three-render
+//= require three-minified
 //= require turbolinks
 //= require_tree .

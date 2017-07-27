@@ -5,6 +5,7 @@ class ShootsController < ApplicationController
   # GET /shoots.json
   def index
     @shoots = Shoot.all
+    @date = params[:month] ? Date.parse(params[:month].gsub('-', '/')) : Date.today
   end
 
   # GET /shoots/1
@@ -19,6 +20,7 @@ class ShootsController < ApplicationController
 
   # GET /shoots/1/edit
   def edit
+    @shoot = Shoot.find(params[:id])
   end
 
   # POST /shoots

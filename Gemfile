@@ -31,6 +31,7 @@ gem 'maktoub'
 gem 'jquery-rails'
 gem 'tuxedo-css-rails'
 gem "simple_calendar", "~> 2.0"
+gem "watu_table_builder", :require => "table_builder"
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

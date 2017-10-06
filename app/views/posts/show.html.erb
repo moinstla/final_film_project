@@ -2,7 +2,9 @@
 <div class="container">
   <h2><%= @post.name %></h2>
   <h3><%= @post.title %></h3>
-
+  <% if @post.avatar.exists? %>
+  <%= image_tag "#{@post.avatar}" %>
+  <% end %>
    <br>
   <h3><%= @post.content %></h3>
   <br>

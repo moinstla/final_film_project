@@ -10,5 +10,8 @@
   <%= @shoot.start_time %>
 </p>
 
-<p><%= link_to 'Edit', edit_shoot_path(@shoot) %></p> 
+<%= link_to 'View Script', @shoot.pdf.url %>
+<br><br>
+<hr>
+<p><%= link_to 'Edit', edit_shoot_path(@shoot) %></p>
 <p><%= link_to 'Back', shoots_path %></p>

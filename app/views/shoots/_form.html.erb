@@ -21,6 +21,11 @@
     <%= form.datetime_select :start_time, id: :shoot_start_time %>
   </div>
 
+  <div class="field">
+    <%= form.label :pdf  %>
+    <%= form.file_field :pdf %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

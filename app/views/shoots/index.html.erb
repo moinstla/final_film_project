@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Shoots</h1>
+<p><%= link_to 'New Shoot', new_shoot_path %></p>
 <div id="calendar">
   <h2 id="month">
     <%= link_to "<", :month => (@date.beginning_of_month-1).strftime("%Y-%m") %>
@@ -41,7 +42,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<p><%= link_to 'New Shoot', new_shoot_path %></p>

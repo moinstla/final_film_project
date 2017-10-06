@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>FilmProject</title>
-    <link rel="stylesheet" href="css/styles.css">
-		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="js/tuxedo.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%= csrf_meta_tags %>
+<head>
+  <title>FilmProject</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="js/tuxedo.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body>
 
-<div class="side-bar bg-dark-grey">
+  <nav class="nav-dark fixed">
+    <h2>FilmProject</h2>
+  </nav>
+  <div class="side-bar bg-dark-grey">
 
-  <ul class="underline-light">
-    <li class="active"><%= link_to "Home",  posts_path %></li>
-    <% if current_user %>
+    <ul class="underline-light">
+      <% if current_user %>
+      <li><%= link_to "Updates",  posts_path %></li>
+      <li><%= link_to "Shoots",  shoots_path %></li>
+    </ul>
+    <ul>
       <li> <%= link_to "Sign out", destroy_user_session_path, method: 'delete' %></li>
-    <li> <%= link_to "Add Post",  new_post_path %></li>
+    </ul>
+
+    <% else %>
+    <li><%= link_to 'Sign In', new_user_session_path %></li>
+    <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+    <% end %>
   </ul>
-
-
-
-        <% else %>
-        <li><%= link_to 'Sign In', new_user_session_path %></li>
-        <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <% end %>
-        </ul>
-      </div>
-      <div class="side-bar-content">
-      <%= yield %>
-      </div>
-    </body>
-  </div>
+</div>
+<div class="side-bar-content">
+  <%= yield %>
+</div>
+</body>
+</div>
 </html>

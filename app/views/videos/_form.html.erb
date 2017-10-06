@@ -1,0 +1,15 @@
+<%= render "layouts/errors", :object => @video %>
+
+<%= form_for [@gallery, @video] do |f| %>
+  <%= f.label :description %>
+  <br>
+  <%= f.text_field :description %>
+  <br>
+  <%= f.label :clip  %>
+  <br>
+  <%= f.file_field :clip %>
+  <br>
+  <div class="button">
+    <%= f.submit  %>
+  </div>
+<% end %>

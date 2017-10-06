@@ -1,0 +1,24 @@
+<div class="container">
+  <h2><%= @gallery.title %></h2>
+  <h3><%= @gallery.description %></h3>
+   <br>
+  <br>
+  <% if current_user.try(:admin?) %>
+  <p><%= link_to "Edit Gallery", edit_gallery_path(@gallery) %></p>
+  <p><%= link_to "Delete Gallery", gallery_path(@gallery), :data => {:confirm => "You sure?", :method => "delete"} %></p>
+  <% end %>
+
+  <h3>Clips:</h3>
+  <p><%= link_to "Add Clip", new_gallery_video_path(@gallery) %></p>
+
+    <% @gallery.videos.each do |video| %>
+          <%= image_tag "#{video.clip}" %>
+
+
+
+      <% if current_user.try(:admin?) %>
+      <p><%= link_to "Delete Clip", gallery_video_path(@gallery, video), :data => {:confirm => "You sure?", :method => "delete"} %></p>
+      <% end %>
+      <br>
+<% end %>
+</div>

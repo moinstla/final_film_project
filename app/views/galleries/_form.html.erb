@@ -1,0 +1,15 @@
+<%= render "layouts/errors", :object => @gallery %>
+
+<%= form_for @gallery do |f| %>
+  <%= f.label :title %>
+  <br>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :description %>
+  <br>
+  <%= f.text_field :description %>
+  <br>
+  <div class="button">
+    <%= f.submit  %>
+  </div>
+<% end %>

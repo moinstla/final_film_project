@@ -1,12 +1,11 @@
 
 <div class="container">
   <h2><%= @post.name %></h2>
-  <h3><%= @post.title %></h3>
   <% if @post.avatar.exists? %>
   <%= image_tag "#{@post.avatar}" %>
   <% end %>
+  <h4><%= @post.title %></h4>
    <br>
-  <h3><%= @post.content %></h3>
   <br>
   <% if current_user.try(:admin?) %>
   <p><%= link_to "Edit Post", edit_post_path(@post) %></p>
@@ -16,7 +15,7 @@
   <h3>Comments:</h3>
   <p><%= link_to "Add Comment", new_post_comment_path(@post) %></p>
   <% @post.comments.each do |comment| %>
-        <li><h4> "<%= comment.content %>" </h4></li>
+        <h4> "<%= comment.content %>" </h4>
 
       <% if current_user.try(:admin?) %>
       <p><%= link_to "Delete Comment", post_comment_path(@post, comment), :data => {:confirm => "You sure?", :method => "delete"} %></p>
